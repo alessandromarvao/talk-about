@@ -137,6 +137,11 @@ p {
   align-items: center;
 }
 
+.message small {
+  color: #BDBDBD;
+  padding-right: 15px;
+  padding-top: 5px;
+}
 
 .sent {
   flex-direction: row-reverse;
