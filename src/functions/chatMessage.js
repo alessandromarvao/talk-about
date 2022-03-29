@@ -11,7 +11,12 @@ function ChatMessage(props) {
 		<div className={`message ${messageClass}`} >
 			<img src={photoURL} alt="Foto de perfil" />
 			<p>{text}</p>
-			<small>{ moment(createdAt.toDate()).calendar() }</small>
+			<small>
+				{createdAt // Confere se a variável createdAt já existe (no firebase, o bd armazena inicialmente a data como null, para depois atualizar)
+					? moment(createdAt.toDate()).calendar() 
+					: moment().fromNow()
+				}
+			</small>
 		</div>
 	)
 }

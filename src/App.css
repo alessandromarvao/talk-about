@@ -139,7 +139,6 @@ p {
 
 .message small {
   color: #BDBDBD;
-  padding-right: 15px;
   padding-top: 5px;
 }
 
@@ -147,14 +146,23 @@ p {
   flex-direction: row-reverse;
 }
 
+.sent small {
+  padding-right: 15px;
+}
+
 .sent p {
   color: white;
   background: #0b93f6;
   align-self: flex-end;
 }
+
 .received p {
   background: #e5e5ea;
   color: black;
+}
+
+.received small {
+  padding-left: 15px;
 }
 
 img {
