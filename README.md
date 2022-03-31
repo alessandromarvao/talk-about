@@ -40,4 +40,8 @@ npm start
 ## Contributing
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
 
+<<<<<<< HEAD
 Please make sure to update tests as appropriate.
+=======
+Please make sure to update tests as appropriate.
+>>>>>>> cda318c679e18a79caa8044745260e3a66cad4a2
