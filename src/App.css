@@ -105,15 +105,38 @@ button:disabled {
   cursor: not-allowed;
 }
 
+.sign-in-buttons{
+  margin-top: 4em;
+}
 
 .sign-in {
+  width: 320px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
   color: #282c34;
   background: white;
-  max-width: 400px;
-  margin: 0 auto;
 }
 
 
+.google{
+  color: #606060;
+}
+
+.facebook{
+  background-color:#4267B2;
+  color: #FFF;
+}
+
+.twitter{
+  background-color:#00ACEE;
+  color: #FFF;
+}
+
+.github{
+  background-color:#f5f5f5;  
+}
 
 
 ul, li {
@@ -126,7 +149,6 @@ p {
   margin-bottom: 12px;
   line-height: 24px;
   padding: 10px 20px;
-  border-radius: 25px;
   position: relative;
   color: white;
   text-align: center;
@@ -142,7 +164,7 @@ p {
   padding-top: 5px;
 }
 
-.sent {
+.sent  {
   flex-direction: row-reverse;
 }
 
@@ -154,11 +176,17 @@ p {
   color: white;
   background: #0b93f6;
   align-self: flex-end;
+  max-width: 450px;
+  text-align: justify;
+  border-radius: 15px 2px 15px 15px;
 }
 
 .received p {
   background: #e5e5ea;
   color: black;
+  max-width: 400px;
+  text-align: justify;
+  border-radius: 2px 15px 15px 15px;
 }
 
 .received small {

@@ -1,6 +1,9 @@
+import { getAuth } from 'firebase/auth';
+
 function SignOut(props) {
-	return props.auth.currentUser && (
-		<button className="sign-out" onClick={() => props.auth.signOut()}>Sign Out</button>
+	let auth = getAuth();
+	return auth.currentUser && (
+		<button className="sign-out" onClick={() => auth.signOut()}>Sign Out</button>
 	)
 }
 

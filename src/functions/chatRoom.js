@@ -1,4 +1,6 @@
+
 import { React, useRef, useState } from 'react';
+import { getAuth } from 'firebase/auth';
 import { collection, query, orderBy, limit, serverTimestamp, addDoc } from 'firebase/firestore';
 import { useCollection } from 'react-firebase-hooks/firestore';
 
@@ -6,6 +8,7 @@ import ChatMessage from './chatMessage';
 
 function ChatRoom(props) {
 	const dummy = useRef();
+	const auth = getAuth();
 
 	const messagesRef = collection(props.firestore, 'mensagens'); // Referencia a coleção `mensagens`
 	const q = query(messagesRef, orderBy('createdAt'), limit(25)); // Cria a query da consulta ao firestore
@@ -16,14 +19,15 @@ function ChatRoom(props) {
 	const sendMessage = async (e) => {
 		e.preventDefault();
 
-		const { uid, photoURL } = props.auth.currentUser;
+		const { uid, photoURL, displayName } = auth.currentUser;
 
 		// cria um novo documento no firestore
 		await addDoc(messagesRef, {
 			text: formValue,
 			createdAt: serverTimestamp(),
 			uid,
-			photoURL
+			photoURL,
+			displayName
 		})
 
 		setFormValue('');
@@ -34,7 +38,7 @@ function ChatRoom(props) {
 	return (
 		<div>
 			<main>
-				{messages && messages.docs.map(msg => <ul key={msg.id}> <ChatMessage message={msg.data()} auth={ props.auth } /> </ul>)}
+				{messages && messages.docs.map(msg => <ul key={msg.id}> <ChatMessage message={msg.data()} auth={ auth }  /> </ul>)}
 				<span ref={dummy}></span>
 			</main>
 

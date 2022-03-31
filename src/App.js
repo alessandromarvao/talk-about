@@ -25,10 +25,10 @@ function App() {
 		<div className="App">
 			<header>
 				<h1>Talk About</h1> <small>A ⚛️ReactJs chat project</small>
-				<SignOut auth={auth} />
+				<SignOut/>
 			</header>
 			<section>	
-				{user ? <ChatRoom firestore={ firestore } auth={ auth } /> : <SignIn auth={ auth } />}
+				{user ? <ChatRoom firestore={ firestore }  /> : <SignIn />}
 			</section>
 		</div>
 	);
