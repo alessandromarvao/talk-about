@@ -116,11 +116,12 @@ button:disabled {
   align-items: center;
   justify-content: space-between;
   color: #282c34;
-  background: white;
+  /* background: white; */
 }
 
 
 .google{
+  background-color: #FFF;
   color: #606060;
 }
 
@@ -148,7 +149,7 @@ p {
   max-width: 500px;
   margin-bottom: 12px;
   line-height: 24px;
-  padding: 10px 20px;
+  padding: 10px 20px ;
   position: relative;
   color: white;
   text-align: center;
