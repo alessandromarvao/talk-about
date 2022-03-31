@@ -1,70 +1,43 @@
-# Getting Started with Create React App
+# Chat Talk About ( A ReactJS ⚛️ + Firebase 🔥 application)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Este é um estudo que fiz para a criação de chat utilizando ReactJS para o desenvolvimento da página e backend desenvolvido no Firebase. O chat requer autenticação com alguma conta Google.
 
-## Available Scripts
+O link do chat em produção: (<https://alessandro-marvao-talk-about.netlify.app/>)
 
-In the project directory, you can run:
+Para começar a utilizar o ReactJs, você precisa ter o Node.js instalado. Node inclui o npm (o gerenciador de pacotes node), e o npx (o executador de pacotes do node).
 
-### `npm start`
+## Installation
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Clone o repositório a partir do GitHub:
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+```bash
+git clone https://github.com/alessandromarvao/talk-about.git
+```
 
-### `npm test`
+Concluído o download, acesse a pasta do repositório e instale as dependências via NPM:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+```bash
+npm install
+```
 
-### `npm run build`
+Você também deverá criar a aplicação no Firebase Console. Assim que concluir a criação, você deverá também adicionar o app para web.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Após criar a aplicação no Firebase, copie a configuração do SDK do Firebase e cole no arquivo /src/config/firebaseConfigExample.js e depois renomeie o arquivo para firebaseConfig.js
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Configuração do Firebase: <br />
+![alt text](https://i.ibb.co/HD68SM9/Captura-de-tela-de-2022-03-29-13-47-18.png)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Configuração do arquivo firebaseConfig.js: <br />
+![alt text](https://i.ibb.co/cCmL0w6/Captura-de-tela-de-2022-03-29-14-01-09.png)
 
-### `npm run eject`
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+Agora é só rodar o sistema:
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+```bash
+npm start
+```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## Contributing
+Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Please make sure to update tests as appropriate.
