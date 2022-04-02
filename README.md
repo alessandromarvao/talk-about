@@ -2,7 +2,7 @@
 
 Este é um estudo que fiz para a criação de chat utilizando ReactJS para o desenvolvimento da página e backend desenvolvido no Firebase. O chat requer autenticação com alguma conta Google.
 
-O link do chat em produção: (<https://alessandro-marvao-talk-about.netlify.app/>)
+O link do chat em produção: (<https://alessandromarvao-talk-about.netlify.app/>)
 
 Para começar a utilizar o ReactJs, você precisa ter o Node.js instalado. Node inclui o npm (o gerenciador de pacotes node), e o npx (o executador de pacotes do node).
 
