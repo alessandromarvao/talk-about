@@ -1,5 +1,4 @@
 import { React } from 'react';
-import './App.css';
 
 import { initializeApp } from 'firebase/app';
 import { getFirestore } from 'firebase/firestore';
@@ -12,6 +11,8 @@ import FirebaseConfig from './config/firebaseConfig';
 import SignIn from "./functions/signIn";
 import SignOut from "./functions/signOut";
 import ChatRoom from "./functions/chatRoom";
+
+import './App.css';
 
 initializeApp(FirebaseConfig);
 
