@@ -1,7 +1,25 @@
 import { getAuth, GoogleAuthProvider, signInWithPopup, FacebookAuthProvider } from 'firebase/auth';
+import { useEffect, useState } from 'react';
+import { toast, ToastContainer } from 'react-toastify';
+
+import 'react-toastify/dist/ReactToastify.css';
 
 function SignIn(props) {
 	const auth = getAuth();
+	const [error, setError] = useState(false);
+	const [errorMsg, setErrorMsg] = useState('');
+
+	useEffect(() => {
+		error && toast.error(errorMsg, {
+			position: "top-right",
+			autoClose: 2000,
+			hideProgressBar: false,
+			closeOnClick: true,
+			progress: undefined,
+		});
+
+		setError(false);
+	}, [error]);
 
 	const signInWithGoogle = () => {
 		const provider = new GoogleAuthProvider();
@@ -12,28 +30,27 @@ function SignIn(props) {
 		const provider = new FacebookAuthProvider();
 		signInWithPopup(auth, provider)
 			.then((result) => {
-				const user = result.user;
 				const credential = FacebookAuthProvider.credentialFromResult(result);
-				const accessToken = credential.accessToken;
+				let photoURL = auth.currentUser.photoURL = result.user.photoURL + "?access_token=" + credential.accessToken;
 				auth.onAuthStateChanged((user) => {
-					if(user) {
-						console.log(user.photoURL);
+					if (user) {
+						console.log(photoURL);
 					}
 				})
 			})
 			.catch((error) => {
 				// Handle Errors here.
 				const errorCode = error.code;
-				const errorMessage = error.message;
-				// The email of the user's account used.
-				const email = error.email;
-				// The AuthCredential type that was used.
-				const credential = FacebookAuthProvider.credentialFromError(error);
+
+				setErrorMsg('Facebook: Esta conta de e-mail é utilizada por outra credencial');
+				// setErrorMsg(errorCode);
+				setError(true);
 			})
 	}
 
 	return (
 		<div className='sign-in-buttons'>
+			<ToastContainer />
 			<button className='sign-in google' onClick={signInWithGoogle}>Sign in with Google <img src="./img/google.png" alt="login com Google" /></button>
 			<br />
 			<button className='sign-in facebook' onClick={signInWithFacebook} >Sign in with Facebook <img src="./img/facebook2.png" alt="login com Facebook" /></button>

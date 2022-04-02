@@ -19,7 +19,7 @@ function ChatRoom(props) {
 	const sendMessage = async (e) => {
 		e.preventDefault();
 
-		const { uid, photoURL, displayName } = auth.currentUser;
+		const { uid, photoURL, displayName, email } = auth.currentUser;
 
 		// cria um novo documento no firestore
 		await addDoc(messagesRef, {
@@ -27,7 +27,8 @@ function ChatRoom(props) {
 			createdAt: serverTimestamp(),
 			uid,
 			photoURL,
-			displayName
+			displayName,
+			email
 		})
 
 		setFormValue('');
