@@ -5,7 +5,8 @@ import {
 	GoogleAuthProvider, 
 	signInWithPopup, 
 	FacebookAuthProvider, 
-	TwitterAuthProvider
+	TwitterAuthProvider,
+	GithubAuthProvider
 } from 'firebase/auth';
 
 import { toast, ToastContainer } from 'react-toastify';
@@ -61,6 +62,12 @@ function SignIn(props) {
 		signInWithPopup(auth, provider);
 	}
 
+	const signInWithGitHub = () => {
+		const provider = new GithubAuthProvider();
+		signInWithPopup(auth, provider);
+
+	}
+
 	return (
 		<div className='sign-in-buttons'>
 			<ToastContainer />
@@ -70,7 +77,7 @@ function SignIn(props) {
 			<br />
 			<button className='sign-in twitter' onClick={signInWithTwitter}>Sign in with Twitter <img src="./img/twitter.png" alt="login com Twitter" /></button>
 			<br />
-			<button className='sign-in github' >Sign in with GitHub <img src="./img/github.png" alt="login com GitHub" /></button>
+			<button className='sign-in github' onClick={signInWithGitHub}>Sign in with GitHub <img src="./img/github.png" alt="login com GitHub" /></button>
 		</div>
 	)
 }
